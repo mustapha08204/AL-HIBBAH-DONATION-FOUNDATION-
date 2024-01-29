@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>AL-HIBBAH DONATION FOUNDATION</title>
   </head>
   <body>
     <section>
-      <div class="rectangle-2">
-        <p class="text">DONATE</p>
-      </div>
-
+      <button>DONATE</button>
       <div class="text1"><p>AL-HIBBAH DONATION FOUNDATION</p></div>
       <div class="background-pic">
         <img src="pictures/Untitled design.jpg" alt="" />
@@ -20,32 +17,77 @@
       <div class="text2"><h2>HOW TO USE</h2></div>
       <div class="how-to-use"></div>
     </section>
+    <section>
+      <div class="option">
+        <img src="pictures/Rectangle 8.jpg" alt="" />
+
+        <p class="spread-the-joy-of">
+          Spread the joy of giving this Ramadan! Your generosity can make a
+          difference. Join us in making a positive impact by donating today.
+          Every contribution counts towards creating a brighter and more
+          compassionate Ramadan for those in need.
+        </p>
+        <div class="amount">
+          <div class="progress-container">
+            <div id="donationProgressBar" class="progress-bar">
+              <div id="donationProgressFill" class="progress-fill"></div>
+            </div>
+            <div class="amounts">
+              <span id="amountNeeded">Amount Needed: $1000</span>
+              <span id="amountDonated">Amount Donated: $300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-to-use1"></div>
+      <script>
+        // Update progress bar and amounts
+        const amountNeeded = 1000;
+        const amountDonated = 300;
+
+        const progressBar = document.getElementById("donationProgressBar");
+        const progressFill = document.getElementById("donationProgressFill");
+        const amountNeededSpan = document.getElementById("amountNeeded");
+        const amountDonatedSpan = document.getElementById("amountDonated");
+
+        const progressPercentage = (amountDonated / amountNeeded) * 100;
+        progressFill.style.width = `${progressPercentage}%`;
+
+        amountNeededSpan.textContent = `Amount Needed: $${amountNeeded}`;
+        amountDonatedSpan.textContent = `Amount Donated: $${amountDonated}`;
+      </script>
+    </section>
   </body>
 </html>
 <style>
   body {
     background-color: #dcf2f1;
   }
-  .background-pic {
-  }
+
   .background-pic img {
     width: 100%;
     height: 623px;
   }
-  .rectangle-2 {
+  button {
     position: absolute;
-    width: 19%;
-    height: 25px;
-    display: inline;
-    margin: 430px 70px;
-
-    background-color: #365486;
-    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    border: 3px solid #365486;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: #365486;
+    font-size: 1.2em;
+    font-weight: 550;
+    font-family: "Montserrat", sans-serif;
+    margin: 430px 100px;
   }
-  .text {
-    color: #dcf2f1;
-    margin: 10px 10px;
-    margin-left: 20%;
+
+  button:hover {
+    background: #315cfd;
+    color: white;
+    font-size: 1.5em;
   }
 
   .text1 {
@@ -60,11 +102,77 @@
     height: 300px;
     background-color: #81c7da;
   }
+  .how-to-use1 {
+    margin-top: 70px;
+    width: 100%;
+    height: 600px;
+    background-color: #ceeaf1;
+    border: solid 4px black;
+  }
   .text2 {
     position: absolute;
     margin-left: 50%;
     margin-top: 20px;
-
     font-family: "Courier New", Courier, monospace;
+  }
+  .option {
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    border-radius: 50px;
+    background: #81c7da;
+    box-shadow: inset 5px 5px 0px #6ea9b9, inset -5px -5px 0px #94e5fb;
+  }
+  .option:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+  }
+  .option img {
+    margin-left: 35%;
+    margin-top: 8%;
+  }
+  .spread-the-joy-of {
+    position: absolute;
+    width: 300px;
+    height: 94px;
+    top: 138px;
+    left: 28px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 19px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  .amount {
+    top: 320px;
+    left: 20px;
+    position: absolute;
+  }
+
+  .progress-container {
+    width: 300px;
+    text-align: center;
+  }
+
+  .progress-bar {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 50%; /* Change this value to set the initial progress */
+    background-color: #4caf50;
+  }
+
+  .amounts {
+    font-size: 14px;
+    color: #555;
   }
 </style>
